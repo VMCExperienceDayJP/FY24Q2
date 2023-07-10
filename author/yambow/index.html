@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html>
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -35,6 +35,11 @@ img.emoji {
 .wp-block-navigation a:where(:not(.wp-element-button)){color: inherit;}
 :where(.wp-block-columns.is-layout-flex){gap: 2em;}
 .wp-block-pullquote{font-size: 1.5em;line-height: 1.6;}</style>
+<link rel="stylesheet" id="catch-infinite-scroll-css" href="/202307/wp-content/plugins/catch-infinite-scroll/public/css/catch-infinite-scroll-public.css?ver=2.0.4" type="text/css" media="all">
+<link rel="stylesheet" id="dashicons-css" href="/202307/wp-includes/css/dashicons.min.css?ver=6.2.2" type="text/css" media="all">
+<link rel="stylesheet" id="catch-instagram-feed-gallery-widget-css" href="/202307/wp-content/plugins/catch-instagram-feed-gallery-widget/public/css/catch-instagram-feed-gallery-widget-public.css?ver=2.3.2" type="text/css" media="all">
+<link rel="stylesheet" id="essential-widgets-css" href="/202307/wp-content/plugins/essential-widgets/public/css/essential-widgets-public.css?ver=2.1" type="text/css" media="all">
+<link rel="stylesheet" id="to-top-css" href="/202307/wp-content/plugins/to-top/public/css/to-top-public.css?ver=2.5.2" type="text/css" media="all">
 <link rel="stylesheet" id="chique-fonts-css" href="/202307/wp-content/fonts/394af3852be4d93fb605afe6d24a8b7e.css" type="text/css" media="all">
 <link rel="stylesheet" id="font-awesome-css" href="/202307/wp-content/themes/chique/assets/css/font-awesome/css/font-awesome.css?ver=4.7.0" type="text/css" media="all">
 <link rel="stylesheet" id="chique-style-css" href="/202307/wp-content/themes/chique/style.css?ver=20230308-111334" type="text/css" media="all">
@@ -43,6 +48,20 @@ body:not(.home) .custom-header:after { background-color: rgba(0, 0, 0, 0.2); }</
 <link rel="stylesheet" id="chique-block-style-css" href="/202307/wp-content/themes/chique/assets/css/blocks.css?ver=1.0" type="text/css" media="all">
 <script type="text/javascript" src="/202307/wp-includes/js/jquery/jquery.min.js?ver=3.6.4" id="jquery-core-js"></script>
 <script type="text/javascript" src="/202307/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.0" id="jquery-migrate-js"></script>
+<script type="text/javascript" id="catch-infinite-scroll-js-extra">
+/* <![CDATA[ */
+var selector = {"jetpack_enabled":"","image":"\/202307\/wp-content\/plugins\/catch-infinite-scroll\/image\/loader.gif","load_more_text":"Load More","finish_text":"No more items to display","event":"click","navigationSelector":"nav.navigation, nav#nav-below","nextSelector":"nav.navigation .nav-links a.next, nav.navigation .nav-links .nav-previous a, nav#nav-below .nav-previous a","contentSelector":"#content","itemSelector":"article.status-publish","type":"post","theme":"chique"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="/202307/wp-content/plugins/catch-infinite-scroll/public/js/catch-infinite-scroll-public.js?ver=2.0.4" id="catch-infinite-scroll-js"></script>
+<script type="text/javascript" src="/202307/wp-content/plugins/catch-instagram-feed-gallery-widget/public/js/catch-instagram-feed-gallery-widget-public.js?ver=2.3.2" id="catch-instagram-feed-gallery-widget-js"></script>
+<script type="text/javascript" src="/202307/wp-content/plugins/essential-widgets/public/js/essential-widgets-public.js?ver=2.1" id="essential-widgets-js"></script>
+<script type="text/javascript" id="to-top-js-extra">
+/* <![CDATA[ */
+var to_top_options = {"scroll_offset":"100","icon_opacity":"50","style":"icon","icon_type":"dashicons-arrow-up-alt2","icon_color":"#ffffff","icon_bg_color":"#000000","icon_size":"32","border_radius":"5","image":"\/202307\/wp-content\/plugins\/to-top\/admin\/images\/default.png","image_width":"65","image_alt":"","location":"bottom-right","margin_x":"20","margin_y":"20","show_on_admin":"0","enable_autohide":"0","autohide_time":"2","enable_hide_small_device":"0","small_device_max_width":"640","reset":"0"};
+/* ]]> */
+</script>
+<script async type="text/javascript" src="/202307/wp-content/plugins/to-top/public/js/to-top-public.js?ver=2.5.2" id="to-top-js"></script>
 <link rel="https://api.w.org/" href="/202307/wp-json/">
 <link rel="alternate" type="application/json" href="/202307/wp-json/wp/v2/users/1">
 <link rel="EditURI" type="application/rsd+xml" title="RSD" href="/202307/xmlrpc.php?rsd">
@@ -130,9 +149,9 @@ body:not(.home) .custom-header:after { background-color: rgba(0, 0, 0, 0.2); }</
 					
 
 <form role="search" method="get" class="search-form" action="http://vmc-experience-day-workshop.local/">
-	<label for="search-form-64ac30e026d34">
+	<label for="search-form-64ac35b736024">
 		<span class="screen-reader-text">Search for:</span>	
-		<input type="search" id="search-form-64ac30e026d34" class="search-field" placeholder="Search ..." value="" name="s" title="Search for:">
+		<input type="search" id="search-form-64ac35b736024" class="search-field" placeholder="Search ..." value="" name="s" title="Search for:">
 	</label>
 		
 	<button type="submit" class="search-submit fa fa-search"></button>
@@ -164,9 +183,9 @@ body:not(.home) .custom-header:after { background-color: rgba(0, 0, 0, 0.2); }</
 				
 
 <form role="search" method="get" class="search-form" action="http://vmc-experience-day-workshop.local/">
-	<label for="search-form-64ac30e0270f1">
+	<label for="search-form-64ac35b7363c5">
 		<span class="screen-reader-text">Search for:</span>	
-		<input type="search" id="search-form-64ac30e0270f1" class="search-field" placeholder="Search ..." value="" name="s" title="Search for:">
+		<input type="search" id="search-form-64ac35b7363c5" class="search-field" placeholder="Search ..." value="" name="s" title="Search for:">
 	</label>
 		
 	<button type="submit" class="search-submit fa fa-search"></button>
@@ -213,9 +232,9 @@ body:not(.home) .custom-header:after { background-color: rgba(0, 0, 0, 0.2); }</
 			
 
 <form role="search" method="get" class="search-form" action="http://vmc-experience-day-workshop.local/">
-	<label for="search-form-64ac30e0272f8">
+	<label for="search-form-64ac35b7365d9">
 		<span class="screen-reader-text">Search for:</span>	
-		<input type="search" id="search-form-64ac30e0272f8" class="search-field" placeholder="Search ..." value="" name="s" title="Search for:">
+		<input type="search" id="search-form-64ac35b7365d9" class="search-field" placeholder="Search ..." value="" name="s" title="Search for:">
 	</label>
 		
 	<button type="submit" class="search-submit fa fa-search"></button>
@@ -243,7 +262,7 @@ body:not(.home) .custom-header:after { background-color: rgba(0, 0, 0, 0.2); }</
 	</div>
 <!-- #page -->
 
-	<script type="text/javascript" src="/202307/wp-content/themes/chique/assets/js/navigation.min.js?ver=20171226" id="chique-navigation-js"></script>
+	<span aria-hidden="true" id="to_top_scrollup" class="dashicons dashicons-arrow-up-alt2"><span class="screen-reader-text">上にスクロール</span></span><script type="text/javascript" src="/202307/wp-content/themes/chique/assets/js/navigation.min.js?ver=20171226" id="chique-navigation-js"></script>
 <script type="text/javascript" src="/202307/wp-content/themes/chique/assets/js/skip-link-focus-fix.min.js?ver=20171226" id="chique-skip-link-focus-fix-js"></script>
 <script type="text/javascript" src="/202307/wp-content/themes/chique/assets/js/jquery.matchHeight.min.js?ver=20171226" id="jquery-match-height-js"></script>
 <script type="text/javascript" src="/202307/wp-includes/js/imagesloaded.min.js?ver=4.1.4" id="imagesloaded-js"></script>
@@ -255,6 +274,9 @@ var chiqueOptions = {"screenReaderText":{"expand":"expand child menu","collapse"
 /* ]]> */
 </script>
 <script type="text/javascript" src="/202307/wp-content/themes/chique/assets/js/custom-scripts.min.js?ver=1678257365" id="chique-script-js"></script>
+<!-- This site is optimized with the Catch Web Tools v2.7.3 - https://catchplugins.com/plugins/catch-web-tools/ -->
+
+<!-- / Catch Web Tools plugin. -->
 
 
 </div>
