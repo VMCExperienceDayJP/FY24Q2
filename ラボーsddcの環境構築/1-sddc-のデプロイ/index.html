@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="profile" href="http://gmpg.org/xfn/11">
+
+	<title>ステップ１　SDDC の展開 &#8211; VMware Cloud on AWS  Experience Day</title>
+<meta name="robots" content="max-image-preview:large">
+<link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+<link href="https://fonts.gstatic.com/" crossorigin rel="preconnect">
+<link rel="alternate" type="application/rss+xml" title="VMware Cloud on AWS  Experience Day &raquo; フィード" href="/202307/feed/">
+<link rel="alternate" type="application/rss+xml" title="VMware Cloud on AWS  Experience Day &raquo; コメントフィード" href="/202307/comments/feed/">
+<script type="text/javascript">
+window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/svg\/","svgExt":".svg","source":{"concatemoji":"\/202307\/wp-includes\/js\/wp-emoji-release.min.js?ver=6.2.2"}};
+/*! This file is auto-generated */
+!function(e,a,t){var n,r,o,i=a.createElement("canvas"),p=i.getContext&&i.getContext("2d");function s(e,t){p.clearRect(0,0,i.width,i.height),p.fillText(e,0,0);e=i.toDataURL();return p.clearRect(0,0,i.width,i.height),p.fillText(t,0,0),e===i.toDataURL()}function c(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(o=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},r=0;r<o.length;r++)t.supports[o[r]]=function(e){if(p&&p.fillText)switch(p.textBaseline="top",p.font="600 32px Arial",e){case"flag":return s("🏳️‍⚧️","🏳️​⚧️")?!1:!s("🇺🇳","🇺​🇳")&&!s("🏴󠁧󠁢󠁥󠁮󠁧󠁿","🏴​󠁧​󠁢​󠁥​󠁮​󠁧​󠁿");case"emoji":return!s("🫱🏻‍🫲🏿","🫱🏻​🫲🏿")}return!1}(o[r]),t.supports.everything=t.supports.everything&&t.supports[o[r]],"flag"!==o[r]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[o[r]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(e=t.source||{}).concatemoji?c(e.concatemoji):e.wpemoji&&e.twemoji&&(c(e.twemoji),c(e.wpemoji)))}(window,document,window._wpemojiSettings);
+</script>
+<style type="text/css">img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 0.07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}</style>
+	<link rel="stylesheet" id="ppb-panels-front-css" href="/202307/wp-content/plugins/pootle-page-builder/css/front.css?ver=5.7.1" type="text/css" media="all">
+<link rel="stylesheet" id="fontawesome-css" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css?ver=6.2.2" type="text/css" media="all">
+<link rel="stylesheet" id="wp-block-library-css" href="/202307/wp-includes/css/dist/block-library/style.min.css?ver=6.2.2" type="text/css" media="all">
+<style id="wp-block-library-theme-inline-css" type="text/css">.wp-block-audio figcaption{color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-audio figcaption{color:hsla(0,0%,100%,.65)}.wp-block-audio{margin:0 0 1em}.wp-block-code{border:1px solid #ccc;border-radius:4px;font-family:Menlo,Consolas,monaco,monospace;padding:.8em 1em}.wp-block-embed figcaption{color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-embed figcaption{color:hsla(0,0%,100%,.65)}.wp-block-embed{margin:0 0 1em}.blocks-gallery-caption{color:#555;font-size:13px;text-align:center}.is-dark-theme .blocks-gallery-caption{color:hsla(0,0%,100%,.65)}.wp-block-image figcaption{color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-image figcaption{color:hsla(0,0%,100%,.65)}.wp-block-image{margin:0 0 1em}.wp-block-pullquote{border-bottom:4px solid;border-top:4px solid;color:currentColor;margin-bottom:1.75em}.wp-block-pullquote cite,.wp-block-pullquote footer,.wp-block-pullquote__citation{color:currentColor;font-size:.8125em;font-style:normal;text-transform:uppercase}.wp-block-quote{border-left:.25em solid;margin:0 0 1.75em;padding-left:1em}.wp-block-quote cite,.wp-block-quote footer{color:currentColor;font-size:.8125em;font-style:normal;position:relative}.wp-block-quote.has-text-align-right{border-left:none;border-right:.25em solid;padding-left:0;padding-right:1em}.wp-block-quote.has-text-align-center{border:none;padding-left:0}.wp-block-quote.is-large,.wp-block-quote.is-style-large,.wp-block-quote.is-style-plain{border:none}.wp-block-search .wp-block-search__label{font-weight:700}.wp-block-search__button{border:1px solid #ccc;padding:.375em .625em}:where(.wp-block-group.has-background){padding:1.25em 2.375em}.wp-block-separator.has-css-opacity{opacity:.4}.wp-block-separator{border:none;border-bottom:2px solid;margin-left:auto;margin-right:auto}.wp-block-separator.has-alpha-channel-opacity{opacity:1}.wp-block-separator:not(.is-style-wide):not(.is-style-dots){width:100px}.wp-block-separator.has-background:not(.is-style-dots){border-bottom:none;height:1px}.wp-block-separator.has-background:not(.is-style-wide):not(.is-style-dots){height:2px}.wp-block-table{margin:0 0 1em}.wp-block-table td,.wp-block-table th{word-break:normal}.wp-block-table figcaption{color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-table figcaption{color:hsla(0,0%,100%,.65)}.wp-block-video figcaption{color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-video figcaption{color:hsla(0,0%,100%,.65)}.wp-block-video{margin:0 0 1em}.wp-block-template-part.has-background{margin-bottom:0;margin-top:0;padding:1.25em 2.375em}</style>
+<link rel="stylesheet" id="classic-theme-styles-css" href="/202307/wp-includes/css/classic-themes.min.css?ver=6.2.2" type="text/css" media="all">
+<style id="global-styles-inline-css" type="text/css">body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--color--medium-black: #333333;--wp--preset--color--gray: #999999;--wp--preset--color--light-gray: #f6f6f6;--wp--preset--color--yellow: #e87785;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');--wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');--wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');--wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');--wp--preset--duotone--midnight: url('#wp-duotone-midnight');--wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');--wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');--wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');--wp--preset--font-size--small: 14px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 42px;--wp--preset--font-size--x-large: 42px;--wp--preset--font-size--normal: 16px;--wp--preset--font-size--huge: 56px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}body .is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}body .is-layout-flex{flex-wrap: wrap;align-items: center;}body .is-layout-flex > *{margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+.wp-block-navigation a:where(:not(.wp-element-button)){color: inherit;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}
+.wp-block-pullquote{font-size: 1.5em;line-height: 1.6;}</style>
+<link rel="stylesheet" id="chique-fonts-css" href="/202307/wp-content/fonts/394af3852be4d93fb605afe6d24a8b7e.css" type="text/css" media="all">
+<link rel="stylesheet" id="font-awesome-css" href="/202307/wp-content/themes/chique/assets/css/font-awesome/css/font-awesome.css?ver=4.7.0" type="text/css" media="all">
+<link rel="stylesheet" id="chique-style-css" href="/202307/wp-content/themes/chique/style.css?ver=20230308-111334" type="text/css" media="all">
+<style id="chique-style-inline-css" type="text/css">.home .custom-header:after { background-color: rgba(0, 0, 0, 0); } 
+body:not(.home) .custom-header:after { background-color: rgba(0, 0, 0, 0.2); }</style>
+<link rel="stylesheet" id="chique-block-style-css" href="/202307/wp-content/themes/chique/assets/css/blocks.css?ver=1.0" type="text/css" media="all">
+<script type="text/javascript" src="/202307/wp-includes/js/jquery/jquery.min.js?ver=3.6.4" id="jquery-core-js"></script>
+<script type="text/javascript" src="/202307/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.0" id="jquery-migrate-js"></script>
+<script type="text/javascript" src="/202307/wp-content/plugins/pootle-page-builder//js/front-end.js?ver=6.2.2" id="pootle-page-builder-front-js-js"></script>
+<link rel="https://api.w.org/" href="/202307/wp-json/">
+<link rel="alternate" type="application/json" href="/202307/wp-json/wp/v2/pages/66">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="/202307/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="/202307/wp-includes/wlwmanifest.xml">
+<meta name="generator" content="WordPress 6.2.2">
+<link rel="canonical" href="/202307/%e3%83%a9%e3%83%9c%e3%83%bcsddc%e3%81%ae%e7%92%b0%e5%a2%83%e6%a7%8b%e7%af%89/1-sddc-%e3%81%ae%e3%83%87%e3%83%97%e3%83%ad%e3%82%a4/">
+<link rel="shortlink" href="/202307/?p=66">
+<link rel="alternate" type="application/json+oembed" href="/202307/wp-json/oembed/1.0/embed?url=http%3A%2F%2F%2F%25e3%2583%25a9%25e3%2583%259c%25e3%2583%25bcsddc%25e3%2581%25ae%25e7%2592%25b0%25e5%25a2%2583%25e6%25a7%258b%25e7%25af%2589%2F1-sddc-%25e3%2581%25ae%25e3%2583%2587%25e3%2583%2597%25e3%2583%25ad%25e3%2582%25a4%2F">
+<link rel="alternate" type="text/xml+oembed" href="/202307/wp-json/oembed/1.0/embed?url=http%3A%2F%2F%2F%25e3%2583%25a9%25e3%2583%259c%25e3%2583%25bcsddc%25e3%2581%25ae%25e7%2592%25b0%25e5%25a2%2583%25e6%25a7%258b%25e7%25af%2589%2F1-sddc-%25e3%2581%25ae%25e3%2583%2587%25e3%2583%2597%25e3%2583%25ad%25e3%2582%25a4%2F#038;format=xml">
+	<script>pbtn = {
+			dialogUrl : '/202307/wp-admin/admin-ajax.php?action=pbtn_dialog'
+		};</script>
+			<style type="text/css">.site-title a,
+			.site-description {
+				color: #000000;
+			}</style>
+		</head>
+
+<body class="page-template page-template-templates page-template-no-sidebar page-template-templatesno-sidebar-php page page-id-66 page-child parent-pageid-26 wp-custom-logo wp-embed-responsive navigation-classic no-sidebar content-width-layout no-header-media-image single-blog no-header-media-text no-featured-slider content-has-padding-top color-scheme-default">
+
+<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-dark-grayscale"><fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "></fecolormatrix><fecomponenttransfer color-interpolation-filters="sRGB"><fefuncr type="table" tablevalues="0 0.49803921568627"></fefuncr><fefuncg type="table" tablevalues="0 0.49803921568627"></fefuncg><fefuncb type="table" tablevalues="0 0.49803921568627"></fefuncb><fefunca type="table" tablevalues="1 1"></fefunca></fecomponenttransfer><fecomposite in2="SourceGraphic" operator="in"></fecomposite></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-grayscale"><fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "></fecolormatrix><fecomponenttransfer color-interpolation-filters="sRGB"><fefuncr type="table" tablevalues="0 1"></fefuncr><fefuncg type="table" tablevalues="0 1"></fefuncg><fefuncb type="table" tablevalues="0 1"></fefuncb><fefunca type="table" tablevalues="1 1"></fefunca></fecomponenttransfer><fecomposite in2="SourceGraphic" operator="in"></fecomposite></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-purple-yellow"><fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "></fecolormatrix><fecomponenttransfer color-interpolation-filters="sRGB"><fefuncr type="table" tablevalues="0.54901960784314 0.98823529411765"></fefuncr><fefuncg type="table" tablevalues="0 1"></fefuncg><fefuncb type="table" tablevalues="0.71764705882353 0.25490196078431"></fefuncb><fefunca type="table" tablevalues="1 1"></fefunca></fecomponenttransfer><fecomposite in2="SourceGraphic" operator="in"></fecomposite></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-blue-red"><fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "></fecolormatrix><fecomponenttransfer color-interpolation-filters="sRGB"><fefuncr type="table" tablevalues="0 1"></fefuncr><fefuncg type="table" tablevalues="0 0.27843137254902"></fefuncg><fefuncb type="table" tablevalues="0.5921568627451 0.27843137254902"></fefuncb><fefunca type="table" tablevalues="1 1"></fefunca></fecomponenttransfer><fecomposite in2="SourceGraphic" operator="in"></fecomposite></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-midnight"><fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "></fecolormatrix><fecomponenttransfer color-interpolation-filters="sRGB"><fefuncr type="table" tablevalues="0 0"></fefuncr><fefuncg type="table" tablevalues="0 0.64705882352941"></fefuncg><fefuncb type="table" tablevalues="0 1"></fefuncb><fefunca type="table" tablevalues="1 1"></fefunca></fecomponenttransfer><fecomposite in2="SourceGraphic" operator="in"></fecomposite></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-magenta-yellow"><fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "></fecolormatrix><fecomponenttransfer color-interpolation-filters="sRGB"><fefuncr type="table" tablevalues="0.78039215686275 1"></fefuncr><fefuncg type="table" tablevalues="0 0.94901960784314"></fefuncg><fefuncb type="table" tablevalues="0.35294117647059 0.47058823529412"></fefuncb><fefunca type="table" tablevalues="1 1"></fefunca></fecomponenttransfer><fecomposite in2="SourceGraphic" operator="in"></fecomposite></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-purple-green"><fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "></fecolormatrix><fecomponenttransfer color-interpolation-filters="sRGB"><fefuncr type="table" tablevalues="0.65098039215686 0.40392156862745"></fefuncr><fefuncg type="table" tablevalues="0 1"></fefuncg><fefuncb type="table" tablevalues="0.44705882352941 0.4"></fefuncb><fefunca type="table" tablevalues="1 1"></fefunca></fecomponenttransfer><fecomposite in2="SourceGraphic" operator="in"></fecomposite></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-blue-orange"><fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "></fecolormatrix><fecomponenttransfer color-interpolation-filters="sRGB"><fefuncr type="table" tablevalues="0.098039215686275 1"></fefuncr><fefuncg type="table" tablevalues="0 0.66274509803922"></fefuncg><fefuncb type="table" tablevalues="0.84705882352941 0.41960784313725"></fefuncb><fefunca type="table" tablevalues="1 1"></fefunca></fecomponenttransfer><fecomposite in2="SourceGraphic" operator="in"></fecomposite></filter></defs></svg>
+	<div id="page" class="site">
+		<a class="skip-link screen-reader-text" href="#content">Skip to content</a>
+
+		<header id="masthead" class="site-header">
+			<div class="wrapper">
+				<div class="site-header-main">
+					<div class="site-branding">
+	<a href="/202307/" class="custom-logo-link" rel="home"><img width="976" height="900" src="/202307/wp-content/uploads/2023/03/cropped-cropped-cropped-vmc-e1678186437358.png" class="custom-logo" alt="VMware Cloud on AWS  Experience Day" decoding="async" srcset="/202307/wp-content/uploads/2023/03/cropped-cropped-cropped-vmc-e1678186437358.png 976w, /202307/wp-content/uploads/2023/03/cropped-cropped-cropped-vmc-e1678186437358-300x277.png 300w, /202307/wp-content/uploads/2023/03/cropped-cropped-cropped-vmc-e1678186437358-768x708.png 768w" sizes="(max-width: 976px) 100vw, 976px"></a>	
+	<div class="site-identity">
+					<p class="site-title"><a href="/202307/" rel="home">VMware Cloud on AWS  Experience Day</a></p>
+		
+			</div>
+</div>
+<!-- .site-branding -->
+
+					<div id="site-header-menu" class="site-header-menu">
+	<div id="primary-menu-wrapper" class="menu-wrapper">
+
+		<div class="header-overlay"></div>
+
+		<div class="menu-toggle-wrapper">
+			<button id="menu-toggle" class="menu-toggle" aria-controls="top-menu" aria-expanded="false">
+				<div class="menu-bars">
+					<div class="bars bar1"></div>
+	  				<div class="bars bar2"></div>
+	  				<div class="bars bar3"></div>
+  				</div>
+				<span class="menu-label">Menu</span>
+			</button>
+		</div>
+<!-- .menu-toggle-wrapper -->
+
+		<div class="menu-inside-wrapper">
+			
+					<nav id="site-navigation" class="main-navigation" role="navigation" aria-label="Primary Menu">
+		<ul id="primary-menu" class="menu nav-menu">
+<li id="menu-item-56" class="menu-item menu-item-type-post_type menu-item-object-page current-page-ancestor current-menu-ancestor current-menu-parent current-page-parent current_page_parent current_page_ancestor menu-item-has-children menu-item-56">
+<a href="/202307/%e3%83%a9%e3%83%9c%e3%83%bcsddc%e3%81%ae%e7%92%b0%e5%a2%83%e6%a7%8b%e7%af%89/">ラボ１ SDDC の環境構築</a>
+<ul class="sub-menu">
+	<li id="menu-item-73" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-66 current_page_item menu-item-73"><a href="/202307/%e3%83%a9%e3%83%9c%e3%83%bcsddc%e3%81%ae%e7%92%b0%e5%a2%83%e6%a7%8b%e7%af%89/1-sddc-%e3%81%ae%e3%83%87%e3%83%97%e3%83%ad%e3%82%a4/" aria-current="page">ステップ１　SDDC の展開</a></li>
+	<li id="menu-item-74" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-74"><a href="/202307/%e3%83%a9%e3%83%9c%e3%83%bcsddc%e3%81%ae%e7%92%b0%e5%a2%83%e6%a7%8b%e7%af%89/2-vmware-cloud-%e3%82%b5%e3%83%bc%e3%83%93%e3%82%b9%e3%83%9d%e3%83%bc%e3%82%bf%e3%83%ab%e3%81%ae%e7%9f%a5%e8%ad%98/">ステップ２　VMware Cloud サービスポータルと VMC コンソールの操作</a></li>
+	<li id="menu-item-124" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-124"><a href="/202307/%e3%83%a9%e3%83%9c%e3%83%bcsddc%e3%81%ae%e7%92%b0%e5%a2%83%e6%a7%8b%e7%af%89/3-%e3%83%8d%e3%83%83%e3%83%88%e3%83%af%e3%83%bc%e3%82%af%e3%82%bb%e3%82%b0%e3%83%a1%e3%83%b3%e3%83%88%e3%81%ae%e4%bd%9c%e6%88%90/">ステップ３　ネットワークセグメントの作成</a></li>
+	<li id="menu-item-173" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-173"><a href="/202307/%e3%83%a9%e3%83%9c%e3%83%bcsddc%e3%81%ae%e7%92%b0%e5%a2%83%e6%a7%8b%e7%af%89/4-vcenter-%e3%81%b8%e3%81%ae%e3%82%a2%e3%82%af%e3%82%bb%e3%82%b9%e3%82%92%e8%a8%b1%e5%8f%af%e3%81%99%e3%82%8b/">ステップ４　vCenter 接続の許可</a></li>
+	<li id="menu-item-162" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-162"><a href="/202307/%e3%83%a9%e3%83%9c%e3%83%bcsddc%e3%81%ae%e7%92%b0%e5%a2%83%e6%a7%8b%e7%af%89/5-%e3%83%86%e3%83%b3%e3%83%97%e3%83%ac%e3%83%bc%e3%83%88%e3%81%8b%e3%82%89-linux-vm-%e3%82%92%e4%bd%9c%e6%88%90%e3%81%99%e3%82%8b/">ステップ５　仮想マシンの作成</a></li>
+	<li id="menu-item-194" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-194"><a href="/202307/%e3%83%a9%e3%83%9c%e3%83%bcsddc%e3%81%ae%e7%92%b0%e5%a2%83%e6%a7%8b%e7%af%89/6-%e3%82%a4%e3%83%b3%e3%83%99%e3%83%b3%e3%83%88%e3%83%aa%e3%82%b0%e3%83%ab%e3%83%bc%e3%83%97%e3%81%ae%e4%bd%9c%e6%88%90/">ステップ６　グループの作成</a></li>
+	<li id="menu-item-202" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-202"><a href="/202307/%e3%83%a9%e3%83%9c%e3%83%bcsddc%e3%81%ae%e7%92%b0%e5%a2%83%e6%a7%8b%e7%af%89/7-http-%e3%82%a2%e3%82%af%e3%82%bb%e3%82%b9%e3%82%92%e8%a8%b1%e5%8f%af%e3%81%99%e3%82%8b%e3%83%95%e3%82%a1%e3%82%a4%e3%82%a2%e3%82%a6%e3%82%a9%e3%83%bc%e3%83%ab%e3%83%ab%e3%83%bc%e3%83%ab%e3%81%ae/">ステップ７　ファイアウォールルールの作成</a></li>
+	<li id="menu-item-208" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-208"><a href="/202307/%e3%83%a9%e3%83%9c%e3%83%bcsddc%e3%81%ae%e7%92%b0%e5%a2%83%e6%a7%8b%e7%af%89/8-%e3%83%91%e3%83%96%e3%83%aa%e3%83%83%e3%82%af-ip-%e3%81%ae%e8%a6%81%e6%b1%82/">ステップ８　パブリック IP の要求</a></li>
+	<li id="menu-item-217" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-217"><a href="/202307/%e3%83%a9%e3%83%9c%e3%83%bcsddc%e3%81%ae%e7%92%b0%e5%a2%83%e6%a7%8b%e7%af%89/9-nat-%e3%83%ab%e3%83%bc%e3%83%ab%e3%81%ae%e4%bd%9c%e6%88%90/">ステップ９　NAT ルールの作成</a></li>
+	<li id="menu-item-220" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-220"><a href="/202307/%e3%83%a9%e3%83%9c%e3%83%bcsddc%e3%81%ae%e7%92%b0%e5%a2%83%e6%a7%8b%e7%af%89/%e3%81%be%e3%81%a8%e3%82%81/">まとめ</a></li>
+</ul>
+</li>
+<li id="menu-item-228" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-228">
+<a href="/202307/%e3%83%a9%e3%83%9c2-vmware-hcx%e3%82%92%e4%bd%bf%e7%94%a8%e3%81%97%e3%81%9f%e3%83%9e%e3%82%a4%e3%82%b0%e3%83%ac%e3%83%bc%e3%82%b7%e3%83%a7%e3%83%b3/">ラボ２ – VMware HCXを使用したマイグレーション</a>
+<ul class="sub-menu">
+	<li id="menu-item-241" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-241"><a href="/202307/%e3%83%a9%e3%83%9c2-vmware-hcx%e3%82%92%e4%bd%bf%e7%94%a8%e3%81%97%e3%81%9f%e3%83%9e%e3%82%a4%e3%82%b0%e3%83%ac%e3%83%bc%e3%82%b7%e3%83%a7%e3%83%b3/1-%e7%a7%bb%e8%a1%8c%e5%85%83%e3%82%b5%e3%82%a4%e3%83%88sddc-b%e3%81%aevcenter%e3%81%ab%e3%83%ad%e3%82%b0%e3%82%a4%e3%83%b3/">ステップ１　移行元 vCenterへの接続</a></li>
+	<li id="menu-item-248" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-248"><a href="/202307/%e3%83%a9%e3%83%9c2-vmware-hcx%e3%82%92%e4%bd%bf%e7%94%a8%e3%81%97%e3%81%9f%e3%83%9e%e3%82%a4%e3%82%b0%e3%83%ac%e3%83%bc%e3%82%b7%e3%83%a7%e3%83%b3/2-%e7%a7%bb%e8%a1%8c%e7%94%a8%e4%bb%ae%e6%83%b3%e3%83%9e%e3%82%b7%e3%83%b3%e3%81%ae-ip-%e3%82%a2%e3%83%89%e3%83%ac%e3%82%b9%e3%81%ae%e7%a2%ba%e8%aa%8d/">ステップ２　IP アドレスの確認</a></li>
+	<li id="menu-item-277" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-277"><a href="/202307/%e3%83%a9%e3%83%9c2-vmware-hcx%e3%82%92%e4%bd%bf%e7%94%a8%e3%81%97%e3%81%9f%e3%83%9e%e3%82%a4%e3%82%b0%e3%83%ac%e3%83%bc%e3%82%b7%e3%83%a7%e3%83%b3/3-%e3%82%bf%e3%83%bc%e3%82%b2%e3%83%83%e3%83%88%e3%82%b5%e3%82%a4%e3%83%88-sddc-a%e3%81%ae-vcenter-%e3%81%ab%e3%83%ad%e3%82%b0%e3%82%a4%e3%83%b3/">ステップ３　移行先 vCenter への接続</a></li>
+	<li id="menu-item-475" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-475"><a href="/202307/%e3%83%a9%e3%83%9c2-vmware-hcx%e3%82%92%e4%bd%bf%e7%94%a8%e3%81%97%e3%81%9f%e3%83%9e%e3%82%a4%e3%82%b0%e3%83%ac%e3%83%bc%e3%82%b7%e3%83%a7%e3%83%b3/%e3%82%b9%e3%83%86%e3%83%83%e3%83%97%ef%bc%94%e3%80%80%e5%8f%97%e8%ac%9b%e8%80%85%e7%94%a8-linux-vm-%e3%81%ae%e4%bd%9c%e6%88%90/">ステップ４　受講者用 Linux VM の作成</a></li>
+	<li id="menu-item-462" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-462"><a href="/202307/%e3%83%a9%e3%83%9c2-vmware-hcx%e3%82%92%e4%bd%bf%e7%94%a8%e3%81%97%e3%81%9f%e3%83%9e%e3%82%a4%e3%82%b0%e3%83%ac%e3%83%bc%e3%82%b7%e3%83%a7%e3%83%b3/%e3%82%b9%e3%83%86%e3%83%83%e3%83%97%ef%bc%95%e3%80%80linux-vm-%e3%81%8b%e3%82%89-ping-%e3%82%92%e5%ae%9f%e8%a1%8c/">ステップ５　Linux VM から ping を実行</a></li>
+	<li id="menu-item-463" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-463"><a href="/202307/%e3%83%a9%e3%83%9c2-vmware-hcx%e3%82%92%e4%bd%bf%e7%94%a8%e3%81%97%e3%81%9f%e3%83%9e%e3%82%a4%e3%82%b0%e3%83%ac%e3%83%bc%e3%82%b7%e3%83%a7%e3%83%b3/%e3%82%b9%e3%83%86%e3%83%83%e3%83%97%ef%bc%96%e3%80%80hcx-%e3%81%ab%e3%82%88%e3%82%8b%e7%a7%bb%e8%a1%8c/">ステップ６　HCX による移行</a></li>
+	<li id="menu-item-464" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-464"><a href="/202307/%e3%83%a9%e3%83%9c2-vmware-hcx%e3%82%92%e4%bd%bf%e7%94%a8%e3%81%97%e3%81%9f%e3%83%9e%e3%82%a4%e3%82%b0%e3%83%ac%e3%83%bc%e3%82%b7%e3%83%a7%e3%83%b3/%e3%82%b9%e3%83%86%e3%83%83%e3%83%97%ef%bc%97%e3%80%80hcx-%e3%82%b3%e3%83%b3%e3%82%bd%e3%83%bc%e3%83%ab%e3%81%ae%e7%a2%ba%e8%aa%8d/">ステップ７　HCX コンソールの確認</a></li>
+	<li id="menu-item-484" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-484"><a href="/202307/%e3%83%a9%e3%83%9c2-vmware-hcx%e3%82%92%e4%bd%bf%e7%94%a8%e3%81%97%e3%81%9f%e3%83%9e%e3%82%a4%e3%82%b0%e3%83%ac%e3%83%bc%e3%82%b7%e3%83%a7%e3%83%b3/%e3%82%b9%e3%83%86%e3%83%83%e3%83%97%ef%bc%98%e3%80%80ping%e3%81%ae%e7%a2%ba%e8%aa%8d/">ステップ８　Pingの確認</a></li>
+	<li id="menu-item-489" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-489"><a href="/202307/%e3%83%a9%e3%83%9c2-vmware-hcx%e3%82%92%e4%bd%bf%e7%94%a8%e3%81%97%e3%81%9f%e3%83%9e%e3%82%a4%e3%82%b0%e3%83%ac%e3%83%bc%e3%82%b7%e3%83%a7%e3%83%b3/%e3%81%be%e3%81%a8%e3%82%81/">まとめ</a></li>
+</ul>
+</li>
+</ul>
+	</nav><!-- .main-navigation -->
+
+			<div class="mobile-social-search">
+				<div class="search-container">
+					
+
+<form role="search" method="get" class="search-form" action="http://vmc-experience-day-workshop.local/">
+	<label for="search-form-64abed3f799f3">
+		<span class="screen-reader-text">Search for:</span>	
+		<input type="search" id="search-form-64abed3f799f3" class="search-field" placeholder="Search ..." value="" name="s" title="Search for:">
+	</label>
+		
+	<button type="submit" class="search-submit fa fa-search"></button>
+</form>
+				</div>
+
+			<nav class="social-navigation" role="navigation" aria-label="Social Links Menu">
+				<div class="menu"><ul>
+<li class="page_item page-item-2"><a href="/202307/"><span class="screen-reader-text">VMware Cloud on AWS Experience Day</span></a></li>
+<li class="page_item page-item-26 page_item_has_children current_page_ancestor current_page_parent"><a href="/202307/%e3%83%a9%e3%83%9c%e3%83%bcsddc%e3%81%ae%e7%92%b0%e5%a2%83%e6%a7%8b%e7%af%89/"><span class="screen-reader-text">ラボ１ SDDC の環境構築</span></a></li>
+<li class="page_item page-item-224 page_item_has_children"><a href="/202307/%e3%83%a9%e3%83%9c2-vmware-hcx%e3%82%92%e4%bd%bf%e7%94%a8%e3%81%97%e3%81%9f%e3%83%9e%e3%82%a4%e3%82%b0%e3%83%ac%e3%83%bc%e3%82%b7%e3%83%a7%e3%83%b3/"><span class="screen-reader-text">ラボ２ &#8211; VMware HCXを使用したマイグレーション</span></a></li>
+</ul></div>
+			</nav><!-- .social-navigation -->
+
+
+			</div>
+<!-- .mobile-social-search -->
+		</div>
+<!-- .menu-inside-wrapper -->
+	</div>
+<!-- #primary-menu-wrapper.menu-wrapper -->
+
+</div>
+<!-- .site-header-menu -->
+
+<div class="search-social-container">
+	<div id="primary-search-wrapper">
+			<div class="search-container">
+				
+
+<form role="search" method="get" class="search-form" action="http://vmc-experience-day-workshop.local/">
+	<label for="search-form-64abed3f79e2a">
+		<span class="screen-reader-text">Search for:</span>	
+		<input type="search" id="search-form-64abed3f79e2a" class="search-field" placeholder="Search ..." value="" name="s" title="Search for:">
+	</label>
+		
+	<button type="submit" class="search-submit fa fa-search"></button>
+</form>
+			</div>
+	</div>
+<!-- #primary-search-wrapper -->
+
+</div> <!-- .search-social-container -->
+
+
+
+				</div> <!-- .site-header-main -->
+
+			</div> <!-- .wrapper -->
+		</header><!-- #masthead -->	
+			
+		<div class="below-site-header">
+
+			<div class="site-overlay"><span class="screen-reader-text">Site Overlay</span></div>
+
+			
+
+
+
+
+
+
+			<div id="content" class="site-content">
+				<div class="wrapper">
+
+    <div id="primary" class="content-area">
+        <main id="main" class="site-main">
+            <div class="singular-content-wrap">
+                
+<article id="post-66" class="post-66 page type-page status-publish hentry">
+	<!-- Page/Post Single Image Disabled or No Image set in Post Thumbnail -->
+	<div class="entry-container">
+		
+		<header class="entry-header">
+			<h1 class="entry-title">ステップ１　SDDC の展開</h1>			<div class="entry-meta">
+				<span class="byline screen-reader-text"> <span class="author-label screen-reader-text">By </span><span class="author vcard"><a class="url fn n" href="/202307/author/yambow/">yambow</a></span></span><span class="posted-on"><span class="date-label"> </span><a href="/202307/%e3%83%a9%e3%83%9c%e3%83%bcsddc%e3%81%ae%e7%92%b0%e5%a2%83%e6%a7%8b%e7%af%89/1-sddc-%e3%81%ae%e3%83%87%e3%83%97%e3%83%ad%e3%82%a4/" rel="bookmark"><time class="entry-date published" datetime="2023-07-07T00:00:42+09:00">2023年7月7日</time><time class="updated" datetime="2023-07-07T19:26:40+09:00">2023年7月7日</time></a></span>			</div>
+<!-- .entry-meta -->
+		</header><!-- .entry-header -->
+
+		
+		<div class="entry-content">
+			
+<p>ここでは、VMware Cloud サービスポータルにログインして、VMware Cloud on AWS の SDDC 環境を展開する操作を体験します。</p>
+
+
+
+<p>SDDC の展開を実行すると、指定した台数の Amazon EC2 ベアメタルインスタンスが選択された AWS リージョンに払い出されます。この時、SDDC を構成する管理コンポーネント（vCenter や ESXi、vSAN、NSX）が自動的にインストールおよび構成されます。その後、VMware Cloud サービスポータルから利用できるように準備されます。</p>
+
+
+
+<p>この一連の処理には、通常 120分ほど必要です。そのため、この「ステップ１」シミュレーション用の環境<strong> </strong><strong>「</strong><strong>ZEROCLOUD</strong><strong>」</strong> を使用して、SDDC 展開の操作を体験します。 <strong>ZEROCLOUD</strong> を利用すると、SDDC は数分で展開できます。</p>
+
+
+
+<p>尚、次のステップからは、<strong>ZEROCLOUD</strong> ではなく実際のクラウドサービス基盤を利用します。詳細は、インストラクターの指示に従ってください。</p>
+
+
+
+<figure class="wp-block-image size-full"><img decoding="async" width="924" height="458" src="/202307/wp-content/uploads/2023/07/ラボ1-1.png" alt="" class="wp-image-305" srcset="/202307/wp-content/uploads/2023/07/ラボ1-1.png 924w, /202307/wp-content/uploads/2023/07/ラボ1-1-300x149.png 300w, /202307/wp-content/uploads/2023/07/ラボ1-1-768x381.png 768w" sizes="(max-width: 924px) 100vw, 924px"></figure>
+
+
+
+<p></p>
+
+
+
+<ol type="1" start="1">
+<li>はじめにVMware Cloud サービスポータル（CSP）にログインします。ご自身の PC でブラウザを起動して、 <a href="https://console.cloud.vmware.com/ ">https://console.cloud.vmware.com/ </a> を開きます。</li>
+
+
+
+<li>インストラクターから提供された認証情報を使用して、CSPにログインします。</li>
+
+
+
+<li>ログインが成功したら、画面左のメニューから<strong>「サービス」</strong>を選び、画面右の<strong>「マイサービス」</strong>の一覧から<strong>「</strong><strong>VMware Cloud on AWS</strong><strong>」</strong>タイルの<strong>「サービスを起動」</strong><strong>&nbsp;</strong>をクリックします。</li>
+</ol>
+
+
+
+<figure class="wp-block-image size-large"><img decoding="async" width="1024" height="558" src="/202307/wp-content/uploads/2023/07/ラボ1-2-1024x558.png" alt="" class="wp-image-306" srcset="/202307/wp-content/uploads/2023/07/ラボ1-2-1024x558.png 1024w, /202307/wp-content/uploads/2023/07/ラボ1-2-300x163.png 300w, /202307/wp-content/uploads/2023/07/ラボ1-2-768x418.png 768w, /202307/wp-content/uploads/2023/07/ラボ1-2-1536x837.png 1536w, /202307/wp-content/uploads/2023/07/ラボ1-2-2048x1116.png 2048w" sizes="(max-width: 1024px) 100vw, 1024px"></figure>
+
+
+
+<p></p>
+
+
+
+<ol type="1" start="4">
+<li>VMware Cloud on AWS のサービス画面に変わります。画面左の<strong>「インベントリ」 </strong>をクリックします。</li>
+
+
+
+<li>次に、画面右上部にある<strong>「</strong><strong>SDDC </strong><strong>を作成」</strong>&nbsp;をクリックします。</li>
+</ol>
+
+
+
+<figure class="wp-block-image size-large"><img decoding="async" width="1024" height="558" src="/202307/wp-content/uploads/2023/07/ラボ1-3-1024x558.png" alt="" class="wp-image-307" srcset="/202307/wp-content/uploads/2023/07/ラボ1-3-1024x558.png 1024w, /202307/wp-content/uploads/2023/07/ラボ1-3-300x163.png 300w, /202307/wp-content/uploads/2023/07/ラボ1-3-768x418.png 768w, /202307/wp-content/uploads/2023/07/ラボ1-3-1536x837.png 1536w, /202307/wp-content/uploads/2023/07/ラボ1-3-2048x1116.png 2048w" sizes="(max-width: 1024px) 100vw, 1024px"></figure>
+
+
+
+<p></p>
+
+
+
+<ol type="1" start="6">
+<li>
+<strong>「Software-Defined Data Center (SDDC) を作成する」 </strong>画面に変わるので、以下のパラメータを入力して<strong>「次へ」</strong>をクリックします。尚、「クラウド」項目の選択では “<strong>ZEROCLOUD</strong>” を選択していることを再確認してから次に進んでください。</li>
+</ol>
+
+
+
+<figure class="wp-block-table"><table>
+<thead><tr>
+<td><strong>プロパティ</strong></td>
+<td><strong>値</strong></td>
+</tr></thead>
+<tbody>
+<tr>
+<td>SDDC 名</td>
+<td>zerocloud-student<em>XXX&nbsp;&nbsp;&nbsp;</em> “XXX”は受講者番号を入力してください</td>
+</tr>
+<tr>
+<td>クラウド</td>
+<td><strong>ZEROCLOUD</strong></td>
+</tr>
+<tr>
+<td>AWS リージョン</td>
+<td>Asia Pacific (Tokyo) ※ 他のリージョンを選択頂いても問題ありません</td>
+</tr>
+<tr>
+<td>デプロイメント</td>
+<td>複数のホスト</td>
+</tr>
+<tr>
+<td>ホストタイプ</td>
+<td>I3 (ローカル SSD)</td>
+</tr>
+<tr>
+<td>ホスト数</td>
+<td>1</td>
+</tr>
+</tbody>
+</table></figure>
+
+
+
+<figure class="wp-block-image size-large"><img decoding="async" width="1024" height="558" src="/202307/wp-content/uploads/2023/07/ラボ1-6-1024x558.png" alt="" class="wp-image-310" srcset="/202307/wp-content/uploads/2023/07/ラボ1-6-1024x558.png 1024w, /202307/wp-content/uploads/2023/07/ラボ1-6-300x163.png 300w, /202307/wp-content/uploads/2023/07/ラボ1-6-768x418.png 768w, /202307/wp-content/uploads/2023/07/ラボ1-6-1536x837.png 1536w, /202307/wp-content/uploads/2023/07/ラボ1-6-2048x1116.png 2048w" sizes="(max-width: 1024px) 100vw, 1024px"></figure>
+
+
+
+<p></p>
+
+
+
+<ol type="1" start="7">
+<li>
+<strong>「AWS アカウント」</strong>画面では、画面に表示される最初の AWS アカウントを選択して<strong>「次へ」</strong>をクリックします。</li>
+</ol>
+
+
+
+<figure class="wp-block-image size-large"><img decoding="async" width="1024" height="558" src="/202307/wp-content/uploads/2023/07/ラボ1-7-1024x558.png" alt="" class="wp-image-309" srcset="/202307/wp-content/uploads/2023/07/ラボ1-7-1024x558.png 1024w, /202307/wp-content/uploads/2023/07/ラボ1-7-300x163.png 300w, /202307/wp-content/uploads/2023/07/ラボ1-7-768x418.png 768w, /202307/wp-content/uploads/2023/07/ラボ1-7-1536x837.png 1536w, /202307/wp-content/uploads/2023/07/ラボ1-7-2048x1116.png 2048w" sizes="(max-width: 1024px) 100vw, 1024px"></figure>
+
+
+
+<p></p>
+
+
+
+<ol type="1" start="8">
+<li>
+<strong>「VPCおよびサブネット」</strong>画面では、<strong>「VPC」</strong>項目の選択メニューから <strong>”172.31.0.0/16”</strong> を含む VPC を選択します。<strong>「サブネット」</strong>項目では、任意のサブネットを選択して「<strong>次へ</strong>」をクリックします。ここで選択した VPC とサブネットは、展開する SDDC と自動的に接続される VPC（Connected VPC）として利用されます。</li>
+</ol>
+
+
+
+<figure class="wp-block-image size-large"><img decoding="async" width="1024" height="561" src="/202307/wp-content/uploads/2023/07/ラボ1-8-1024x561.png" alt="" class="wp-image-311" srcset="/202307/wp-content/uploads/2023/07/ラボ1-8-1024x561.png 1024w, /202307/wp-content/uploads/2023/07/ラボ1-8-300x164.png 300w, /202307/wp-content/uploads/2023/07/ラボ1-8-768x421.png 768w, /202307/wp-content/uploads/2023/07/ラボ1-8-1536x842.png 1536w, /202307/wp-content/uploads/2023/07/ラボ1-8-2048x1123.png 2048w" sizes="(max-width: 1024px) 100vw, 1024px"></figure>
+
+
+
+<p></p>
+
+
+
+<ol type="1" start="9">
+<li>「ネットワークの構成」画面の「管理サブネット」欄に ”<strong>10.2.0.0/16” </strong>を入力して<strong>「次へ」</strong>をクリックします。ここで指定したサブネットは、SDDC を構成するホストや vCenter、NSX などの管理コンポーネントとネットワークで利用されます。</li>
+</ol>
+
+
+
+<figure class="wp-block-image size-large"><img decoding="async" width="1024" height="561" src="/202307/wp-content/uploads/2023/07/ラボ1-9-1024x561.png" alt="" class="wp-image-312" srcset="/202307/wp-content/uploads/2023/07/ラボ1-9-1024x561.png 1024w, /202307/wp-content/uploads/2023/07/ラボ1-9-300x164.png 300w, /202307/wp-content/uploads/2023/07/ラボ1-9-768x421.png 768w, /202307/wp-content/uploads/2023/07/ラボ1-9-1536x842.png 1536w, /202307/wp-content/uploads/2023/07/ラボ1-9-2048x1123.png 2048w" sizes="(max-width: 1024px) 100vw, 1024px"></figure>
+
+
+
+<p></p>
+
+
+
+<ol type="1" start="10">
+<li>
+<strong>「確認と承認」</strong>の画面で２つのチェックボックスにチェックを入れて<strong>「SDDC の展開」</strong>をクリックします。</li>
+</ol>
+
+
+
+<figure class="wp-block-image size-large"><img decoding="async" width="1024" height="561" src="/202307/wp-content/uploads/2023/07/ラボ1-10-1024x561.png" alt="" class="wp-image-313" srcset="/202307/wp-content/uploads/2023/07/ラボ1-10-1024x561.png 1024w, /202307/wp-content/uploads/2023/07/ラボ1-10-300x164.png 300w, /202307/wp-content/uploads/2023/07/ラボ1-10-768x421.png 768w, /202307/wp-content/uploads/2023/07/ラボ1-10-1536x842.png 1536w, /202307/wp-content/uploads/2023/07/ラボ1-10-2048x1123.png 2048w" sizes="(max-width: 1024px) 100vw, 1024px"></figure>
+
+
+
+<p></p>
+
+
+
+<ol type="1" start="11">
+<li>この後、元のイベントリ画面に戻り、今作成したSDDCがリストの中に作成されていることを確認します。尚、この<strong>ZEROCLOUD</strong>はシミュレーション環境であるため、数分で展開の処理が完了します。</li>
+</ol>
+
+
+
+<figure class="wp-block-image size-large"><img decoding="async" width="1024" height="578" src="/202307/wp-content/uploads/2023/07/ラボ1-12-1024x578.png" alt="" class="wp-image-315" srcset="/202307/wp-content/uploads/2023/07/ラボ1-12-1024x578.png 1024w, /202307/wp-content/uploads/2023/07/ラボ1-12-300x169.png 300w, /202307/wp-content/uploads/2023/07/ラボ1-12-768x433.png 768w, /202307/wp-content/uploads/2023/07/ラボ1-12-1536x867.png 1536w, /202307/wp-content/uploads/2023/07/ラボ1-12-2048x1155.png 2048w" sizes="(max-width: 1024px) 100vw, 1024px"></figure>
+
+
+
+<figure class="wp-block-image size-large"><img decoding="async" width="1024" height="561" src="/202307/wp-content/uploads/2023/07/ラボ1-13-1024x561.png" alt="" class="wp-image-316" srcset="/202307/wp-content/uploads/2023/07/ラボ1-13-1024x561.png 1024w, /202307/wp-content/uploads/2023/07/ラボ1-13-300x164.png 300w, /202307/wp-content/uploads/2023/07/ラボ1-13-768x421.png 768w, /202307/wp-content/uploads/2023/07/ラボ1-13-1536x842.png 1536w, /202307/wp-content/uploads/2023/07/ラボ1-13-2048x1123.png 2048w" sizes="(max-width: 1024px) 100vw, 1024px"></figure>
+
+
+
+<p></p>
+
+
+
+<p>SDDCが作成されたら、このステップは終了です。</p>
+
+
+
+<div class="wp-block-buttons is-layout-flex">
+<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="/202307/2-vmware-cloud-%e3%82%b5%e3%83%bc%e3%83%93%e3%82%b9%e3%83%9d%e3%83%bc%e3%82%bf%e3%83%ab%e3%81%ae%e7%9f%a5%e8%ad%98/">Next</a></div>
+</div>
+		</div>
+<!-- .entry-content -->
+
+				</div> <!-- .entry-container -->
+</article><!-- #post-66 -->
+                </div> <!-- singular-content-wrap -->
+        </main><!-- #main -->
+    </div>
+<!-- #primary -->
+
+		</div>
+<!-- #main -->
+
+		<footer id="colophon" class="site-footer">
+
+			
+			<div class="site-info">
+												<a href="https://www.vmware.com/jp.html" class="imprint">
+					Copyright 2023 VMware Cloud on AWS Experience Day.  				</a>
+			</div>
+<!-- .site-info -->
+		</footer><!-- #colophon -->
+	</div>
+<!-- #page -->
+
+		<style id="pbtn-styles">.pbtn.pbtn-left{float:left;}
+		.pbtn.pbtn-center{}
+		.pbtn.pbtn-right{float: right;}</style>
+	<script>jQuery( function ($) {
+			$( 'a.pbtn' ).hover(
+				function() {
+					var $t = $( this );
+					if ( ! $t.data( 'hover-color' ) ) {
+						$t.css( 'opacity', '0.7' );
+						return;
+					}
+					var background = $t.css( 'background' );
+					background = background ? background : $t.css( 'background-color' );
+					$t.data( 'background', background );
+					$t.css( 'background', $t.data( 'hover-color' ) );
+				},
+				function() {
+					var $t = $( this );
+					if ( ! $t.data( 'background' ) ) {
+						$t.css( 'opacity', 1 );
+						return;
+					}
+					$t.css( {
+						'background' : $t.data( 'background' )
+					} );
+				}
+			);
+		} );</script>
+	<link rel="stylesheet" id="dashicons-css" href="/202307/wp-includes/css/dashicons.min.css?ver=6.2.2" type="text/css" media="all">
+<script type="text/javascript" src="/202307/wp-content/themes/chique/assets/js/navigation.min.js?ver=20171226" id="chique-navigation-js"></script>
+<script type="text/javascript" src="/202307/wp-content/themes/chique/assets/js/skip-link-focus-fix.min.js?ver=20171226" id="chique-skip-link-focus-fix-js"></script>
+<script type="text/javascript" src="/202307/wp-content/themes/chique/assets/js/jquery.matchHeight.min.js?ver=20171226" id="jquery-match-height-js"></script>
+<script type="text/javascript" src="/202307/wp-includes/js/imagesloaded.min.js?ver=4.1.4" id="imagesloaded-js"></script>
+<script type="text/javascript" src="/202307/wp-includes/js/masonry.min.js?ver=4.2.2" id="masonry-js"></script>
+<script type="text/javascript" src="/202307/wp-includes/js/jquery/jquery.masonry.min.js?ver=3.1.2b" id="jquery-masonry-js"></script>
+<script type="text/javascript" id="chique-script-js-extra">
+/* <![CDATA[ */
+var chiqueOptions = {"screenReaderText":{"expand":"expand child menu","collapse":"collapse child menu"},"iconNavPrev":"<i class=\"fa fa-chevron-left\"><\/i>","iconNavNext":"<i class=\"fa fa-chevron-right\"><\/i>"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="/202307/wp-content/themes/chique/assets/js/custom-scripts.min.js?ver=1678257365" id="chique-script-js"></script>
+
+
+</div>
+</div>
+</body>
+</html>
