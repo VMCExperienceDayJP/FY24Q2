@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 
-	<title>VMware Cloud on AWS  Experience Day</title>
+	<title>ステップ４　vCenter 接続の許可 &#8211; VMware Cloud on AWS  Experience Day</title>
 <meta name="robots" content="max-image-preview:large">
 <link href="https://fonts.gstatic.com/" crossorigin rel="preconnect">
 <link rel="alternate" type="application/rss+xml" title="VMware Cloud on AWS  Experience Day &raquo; フィード" href="/202307/feed/">
@@ -56,21 +56,21 @@ var to_top_options = {"scroll_offset":"100","icon_opacity":"50","style":"icon","
 </script>
 <script async type="text/javascript" src="/202307/wp-content/plugins/to-top/public/js/to-top-public.js?ver=2.5.2" id="to-top-js"></script>
 <link rel="https://api.w.org/" href="/202307/wp-json/">
-<link rel="alternate" type="application/json" href="/202307/wp-json/wp/v2/pages/2">
+<link rel="alternate" type="application/json" href="/202307/wp-json/wp/v2/pages/163">
 <link rel="EditURI" type="application/rsd+xml" title="RSD" href="/202307/xmlrpc.php?rsd">
 <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="/202307/wp-includes/wlwmanifest.xml">
 <meta name="generator" content="WordPress 6.2.2">
-<link rel="canonical" href="/202307/">
-<link rel="shortlink" href="/202307/">
-<link rel="alternate" type="application/json+oembed" href="/202307/wp-json/oembed/1.0/embed?url=http%3A%2F%2F%2F">
-<link rel="alternate" type="text/xml+oembed" href="/202307/wp-json/oembed/1.0/embed?url=http%3A%2F%2F%2F#038;format=xml">
+<link rel="canonical" href="/202307/%e3%83%a9%e3%83%9c%ef%bc%91-sddc-%e3%81%ae%e7%92%b0%e5%a2%83%e6%a7%8b%e7%af%89/%e3%82%b9%e3%83%86%e3%83%83%e3%83%97%ef%bc%94%e3%80%80vcenter-%e6%8e%a5%e7%b6%9a%e3%81%ae%e8%a8%b1%e5%8f%af/">
+<link rel="shortlink" href="/202307/?p=163">
+<link rel="alternate" type="application/json+oembed" href="/202307/wp-json/oembed/1.0/embed?url=http%3A%2F%2F%2F%25e3%2583%25a9%25e3%2583%259c%25ef%25bc%2591-sddc-%25e3%2581%25ae%25e7%2592%25b0%25e5%25a2%2583%25e6%25a7%258b%25e7%25af%2589%2F%25e3%2582%25b9%25e3%2583%2586%25e3%2583%2583%25e3%2583%2597%25ef%25bc%2594%25e3%2580%2580vcenter-%25e6%258e%25a5%25e7%25b6%259a%25e3%2581%25ae%25e8%25a8%25b1%25e5%258f%25af%2F">
+<link rel="alternate" type="text/xml+oembed" href="/202307/wp-json/oembed/1.0/embed?url=http%3A%2F%2F%2F%25e3%2583%25a9%25e3%2583%259c%25ef%25bc%2591-sddc-%25e3%2581%25ae%25e7%2592%25b0%25e5%25a2%2583%25e6%25a7%258b%25e7%25af%2589%2F%25e3%2582%25b9%25e3%2583%2586%25e3%2583%2583%25e3%2583%2597%25ef%25bc%2594%25e3%2580%2580vcenter-%25e6%258e%25a5%25e7%25b6%259a%25e3%2581%25ae%25e8%25a8%25b1%25e5%258f%25af%2F#038;format=xml">
 		<style type="text/css">.site-title a,
 			.site-description {
 				color: #000000;
 			}</style>
 		</head>
 
-<body class="home page-template page-template-templates page-template-no-sidebar page-template-templatesno-sidebar-php page page-id-2 wp-custom-logo wp-embed-responsive navigation-classic no-sidebar content-width-layout no-header-media-image single-blog no-header-media-text no-featured-slider content-has-padding-top color-scheme-default">
+<body class="page-template page-template-templates page-template-no-sidebar page-template-templatesno-sidebar-php page page-id-163 page-child parent-pageid-26 wp-custom-logo wp-embed-responsive navigation-classic no-sidebar content-width-layout no-header-media-image single-blog no-header-media-text no-featured-slider content-has-padding-top color-scheme-default">
 
 <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-dark-grayscale"><fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "></fecolormatrix><fecomponenttransfer color-interpolation-filters="sRGB"><fefuncr type="table" tablevalues="0 0.49803921568627"></fefuncr><fefuncg type="table" tablevalues="0 0.49803921568627"></fefuncg><fefuncb type="table" tablevalues="0 0.49803921568627"></fefuncb><fefunca type="table" tablevalues="1 1"></fefunca></fecomponenttransfer><fecomposite in2="SourceGraphic" operator="in"></fecomposite></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-grayscale"><fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "></fecolormatrix><fecomponenttransfer color-interpolation-filters="sRGB"><fefuncr type="table" tablevalues="0 1"></fefuncr><fefuncg type="table" tablevalues="0 1"></fefuncg><fefuncb type="table" tablevalues="0 1"></fefuncb><fefunca type="table" tablevalues="1 1"></fefunca></fecomponenttransfer><fecomposite in2="SourceGraphic" operator="in"></fecomposite></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-purple-yellow"><fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "></fecolormatrix><fecomponenttransfer color-interpolation-filters="sRGB"><fefuncr type="table" tablevalues="0.54901960784314 0.98823529411765"></fefuncr><fefuncg type="table" tablevalues="0 1"></fefuncg><fefuncb type="table" tablevalues="0.71764705882353 0.25490196078431"></fefuncb><fefunca type="table" tablevalues="1 1"></fefunca></fecomponenttransfer><fecomposite in2="SourceGraphic" operator="in"></fecomposite></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-blue-red"><fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "></fecolormatrix><fecomponenttransfer color-interpolation-filters="sRGB"><fefuncr type="table" tablevalues="0 1"></fefuncr><fefuncg type="table" tablevalues="0 0.27843137254902"></fefuncg><fefuncb type="table" tablevalues="0.5921568627451 0.27843137254902"></fefuncb><fefunca type="table" tablevalues="1 1"></fefunca></fecomponenttransfer><fecomposite in2="SourceGraphic" operator="in"></fecomposite></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-midnight"><fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "></fecolormatrix><fecomponenttransfer color-interpolation-filters="sRGB"><fefuncr type="table" tablevalues="0 0"></fefuncr><fefuncg type="table" tablevalues="0 0.64705882352941"></fefuncg><fefuncb type="table" tablevalues="0 1"></fefuncb><fefunca type="table" tablevalues="1 1"></fefunca></fecomponenttransfer><fecomposite in2="SourceGraphic" operator="in"></fecomposite></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-magenta-yellow"><fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "></fecolormatrix><fecomponenttransfer color-interpolation-filters="sRGB"><fefuncr type="table" tablevalues="0.78039215686275 1"></fefuncr><fefuncg type="table" tablevalues="0 0.94901960784314"></fefuncg><fefuncb type="table" tablevalues="0.35294117647059 0.47058823529412"></fefuncb><fefunca type="table" tablevalues="1 1"></fefunca></fecomponenttransfer><fecomposite in2="SourceGraphic" operator="in"></fecomposite></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-purple-green"><fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "></fecolormatrix><fecomponenttransfer color-interpolation-filters="sRGB"><fefuncr type="table" tablevalues="0.65098039215686 0.40392156862745"></fefuncr><fefuncg type="table" tablevalues="0 1"></fefuncg><fefuncb type="table" tablevalues="0.44705882352941 0.4"></fefuncb><fefunca type="table" tablevalues="1 1"></fefunca></fecomponenttransfer><fecomposite in2="SourceGraphic" operator="in"></fecomposite></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-blue-orange"><fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "></fecolormatrix><fecomponenttransfer color-interpolation-filters="sRGB"><fefuncr type="table" tablevalues="0.098039215686275 1"></fefuncr><fefuncg type="table" tablevalues="0 0.66274509803922"></fefuncg><fefuncb type="table" tablevalues="0.84705882352941 0.41960784313725"></fefuncb><fefunca type="table" tablevalues="1 1"></fefunca></fecomponenttransfer><fecomposite in2="SourceGraphic" operator="in"></fecomposite></filter></defs></svg>
 	<div id="page" class="site">
@@ -80,7 +80,7 @@ var to_top_options = {"scroll_offset":"100","icon_opacity":"50","style":"icon","
 			<div class="wrapper">
 				<div class="site-header-main">
 					<div class="site-branding">
-	<a href="/202307/" class="custom-logo-link" rel="home" aria-current="page"><img width="976" height="900" src="/202307/wp-content/uploads/2023/03/cropped-cropped-cropped-vmc-e1678186437358.png" class="custom-logo" alt="VMware Cloud on AWS  Experience Day" decoding="async" srcset="/202307/wp-content/uploads/2023/03/cropped-cropped-cropped-vmc-e1678186437358.png 976w, /202307/wp-content/uploads/2023/03/cropped-cropped-cropped-vmc-e1678186437358-300x277.png 300w, /202307/wp-content/uploads/2023/03/cropped-cropped-cropped-vmc-e1678186437358-768x708.png 768w" sizes="(max-width: 976px) 100vw, 976px"></a>	
+	<a href="/202307/" class="custom-logo-link" rel="home"><img width="976" height="900" src="/202307/wp-content/uploads/2023/03/cropped-cropped-cropped-vmc-e1678186437358.png" class="custom-logo" alt="VMware Cloud on AWS  Experience Day" decoding="async" srcset="/202307/wp-content/uploads/2023/03/cropped-cropped-cropped-vmc-e1678186437358.png 976w, /202307/wp-content/uploads/2023/03/cropped-cropped-cropped-vmc-e1678186437358-300x277.png 300w, /202307/wp-content/uploads/2023/03/cropped-cropped-cropped-vmc-e1678186437358-768x708.png 768w" sizes="(max-width: 976px) 100vw, 976px"></a>	
 	<div class="site-identity">
 					<p class="site-title"><a href="/202307/" rel="home">VMware Cloud on AWS  Experience Day</a></p>
 		
@@ -109,13 +109,13 @@ var to_top_options = {"scroll_offset":"100","icon_opacity":"50","style":"icon","
 			
 					<nav id="site-navigation" class="main-navigation" role="navigation" aria-label="Primary Menu">
 		<ul id="primary-menu" class="menu nav-menu">
-<li id="menu-item-56" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-56">
+<li id="menu-item-56" class="menu-item menu-item-type-post_type menu-item-object-page current-page-ancestor current-menu-ancestor current-menu-parent current-page-parent current_page_parent current_page_ancestor menu-item-has-children menu-item-56">
 <a href="/202307/%e3%83%a9%e3%83%9c%ef%bc%91-sddc-%e3%81%ae%e7%92%b0%e5%a2%83%e6%a7%8b%e7%af%89/">ラボ１ SDDC の環境構築</a>
 <ul class="sub-menu">
 	<li id="menu-item-73" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-73"><a href="/202307/%e3%83%a9%e3%83%9c%ef%bc%91-sddc-%e3%81%ae%e7%92%b0%e5%a2%83%e6%a7%8b%e7%af%89/%e3%82%b9%e3%83%86%e3%83%83%e3%83%97%ef%bc%91%e3%80%80sddc-%e3%81%ae%e5%b1%95%e9%96%8b/">ステップ１　SDDC の展開</a></li>
 	<li id="menu-item-74" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-74"><a href="/202307/%e3%83%a9%e3%83%9c%ef%bc%91-sddc-%e3%81%ae%e7%92%b0%e5%a2%83%e6%a7%8b%e7%af%89/%e3%82%b9%e3%83%86%e3%83%83%e3%83%97%ef%bc%92%e3%80%80vmware-cloud-%e3%82%b5%e3%83%bc%e3%83%93%e3%82%b9%e3%83%9d%e3%83%bc%e3%82%bf%e3%83%ab%e3%81%a8-vmc-%e3%82%b3%e3%83%b3%e3%82%bd%e3%83%bc%e3%83%ab/">ステップ２　VMware Cloud サービスポータルと VMC コンソールの操作</a></li>
 	<li id="menu-item-124" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-124"><a href="/202307/%e3%83%a9%e3%83%9c%ef%bc%91-sddc-%e3%81%ae%e7%92%b0%e5%a2%83%e6%a7%8b%e7%af%89/%e3%82%b9%e3%83%86%e3%83%83%e3%83%97%ef%bc%93%e3%80%80%e3%83%8d%e3%83%83%e3%83%88%e3%83%af%e3%83%bc%e3%82%af%e3%82%bb%e3%82%b0%e3%83%a1%e3%83%b3%e3%83%88%e3%81%ae%e4%bd%9c%e6%88%90/">ステップ３　ネットワークセグメントの作成</a></li>
-	<li id="menu-item-173" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-173"><a href="/202307/%e3%83%a9%e3%83%9c%ef%bc%91-sddc-%e3%81%ae%e7%92%b0%e5%a2%83%e6%a7%8b%e7%af%89/%e3%82%b9%e3%83%86%e3%83%83%e3%83%97%ef%bc%94%e3%80%80vcenter-%e6%8e%a5%e7%b6%9a%e3%81%ae%e8%a8%b1%e5%8f%af/">ステップ４　vCenter 接続の許可</a></li>
+	<li id="menu-item-173" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-163 current_page_item menu-item-173"><a href="/202307/%e3%83%a9%e3%83%9c%ef%bc%91-sddc-%e3%81%ae%e7%92%b0%e5%a2%83%e6%a7%8b%e7%af%89/%e3%82%b9%e3%83%86%e3%83%83%e3%83%97%ef%bc%94%e3%80%80vcenter-%e6%8e%a5%e7%b6%9a%e3%81%ae%e8%a8%b1%e5%8f%af/" aria-current="page">ステップ４　vCenter 接続の許可</a></li>
 	<li id="menu-item-162" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-162"><a href="/202307/%e3%83%a9%e3%83%9c%ef%bc%91-sddc-%e3%81%ae%e7%92%b0%e5%a2%83%e6%a7%8b%e7%af%89/%e3%82%b9%e3%83%86%e3%83%83%e3%83%97%ef%bc%95%e3%80%80%e4%bb%ae%e6%83%b3%e3%83%9e%e3%82%b7%e3%83%b3%e3%81%ae%e4%bd%9c%e6%88%90/">ステップ５　仮想マシンの作成</a></li>
 	<li id="menu-item-194" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-194"><a href="/202307/%e3%83%a9%e3%83%9c%ef%bc%91-sddc-%e3%81%ae%e7%92%b0%e5%a2%83%e6%a7%8b%e7%af%89/%e3%82%b9%e3%83%86%e3%83%83%e3%83%97%ef%bc%96%e3%80%80%e3%82%b0%e3%83%ab%e3%83%bc%e3%83%97%e3%81%ae%e4%bd%9c%e6%88%90/">ステップ６　グループの作成</a></li>
 	<li id="menu-item-202" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-202"><a href="/202307/%e3%83%a9%e3%83%9c%ef%bc%91-sddc-%e3%81%ae%e7%92%b0%e5%a2%83%e6%a7%8b%e7%af%89/%e3%82%b9%e3%83%86%e3%83%83%e3%83%97%ef%bc%97%e3%80%80%e3%83%95%e3%82%a1%e3%82%a4%e3%82%a2%e3%82%a6%e3%82%a9%e3%83%bc%e3%83%ab%e3%83%ab%e3%83%bc%e3%83%ab%e3%81%ae%e4%bd%9c%e6%88%90/">ステップ７　ファイアウォールルールの作成</a></li>
@@ -146,9 +146,9 @@ var to_top_options = {"scroll_offset":"100","icon_opacity":"50","style":"icon","
 					
 
 <form role="search" method="get" class="search-form" action="http://vmc-experience-day-workshop.local/">
-	<label for="search-form-64ac3a74e8e9a">
+	<label for="search-form-64ac3a7560fff">
 		<span class="screen-reader-text">Search for:</span>	
-		<input type="search" id="search-form-64ac3a74e8e9a" class="search-field" placeholder="Search ..." value="" name="s" title="Search for:">
+		<input type="search" id="search-form-64ac3a7560fff" class="search-field" placeholder="Search ..." value="" name="s" title="Search for:">
 	</label>
 		
 	<button type="submit" class="search-submit fa fa-search"></button>
@@ -157,8 +157,8 @@ var to_top_options = {"scroll_offset":"100","icon_opacity":"50","style":"icon","
 
 			<nav class="social-navigation" role="navigation" aria-label="Social Links Menu">
 				<div class="menu"><ul>
-<li class="page_item page-item-2 current_page_item"><a href="/202307/" aria-current="page"><span class="screen-reader-text">VMware Cloud on AWS Experience Day</span></a></li>
-<li class="page_item page-item-26 page_item_has_children"><a href="/202307/%e3%83%a9%e3%83%9c%ef%bc%91-sddc-%e3%81%ae%e7%92%b0%e5%a2%83%e6%a7%8b%e7%af%89/"><span class="screen-reader-text">ラボ１ SDDC の環境構築</span></a></li>
+<li class="page_item page-item-2"><a href="/202307/"><span class="screen-reader-text">VMware Cloud on AWS Experience Day</span></a></li>
+<li class="page_item page-item-26 page_item_has_children current_page_ancestor current_page_parent"><a href="/202307/%e3%83%a9%e3%83%9c%ef%bc%91-sddc-%e3%81%ae%e7%92%b0%e5%a2%83%e6%a7%8b%e7%af%89/"><span class="screen-reader-text">ラボ１ SDDC の環境構築</span></a></li>
 <li class="page_item page-item-224 page_item_has_children"><a href="/202307/%e3%83%a9%e3%83%9c%ef%bc%92-vmware-hcx%e3%82%92%e4%bd%bf%e7%94%a8%e3%81%97%e3%81%9f%e3%83%9e%e3%82%a4%e3%82%b0%e3%83%ac%e3%83%bc%e3%82%b7%e3%83%a7%e3%83%b3/"><span class="screen-reader-text">ラボ２ &#8211; VMware HCXを使用したマイグレーション</span></a></li>
 </ul></div>
 			</nav><!-- .social-navigation -->
@@ -180,9 +180,9 @@ var to_top_options = {"scroll_offset":"100","icon_opacity":"50","style":"icon","
 				
 
 <form role="search" method="get" class="search-form" action="http://vmc-experience-day-workshop.local/">
-	<label for="search-form-64ac3a74e9269">
+	<label for="search-form-64ac3a7561350">
 		<span class="screen-reader-text">Search for:</span>	
-		<input type="search" id="search-form-64ac3a74e9269" class="search-field" placeholder="Search ..." value="" name="s" title="Search for:">
+		<input type="search" id="search-form-64ac3a7561350" class="search-field" placeholder="Search ..." value="" name="s" title="Search for:">
 	</label>
 		
 	<button type="submit" class="search-submit fa fa-search"></button>
@@ -211,7 +211,6 @@ var to_top_options = {"scroll_offset":"100","icon_opacity":"50","style":"icon","
 
 
 
-
 			<div id="content" class="site-content">
 				<div class="wrapper">
 
@@ -219,39 +218,141 @@ var to_top_options = {"scroll_offset":"100","icon_opacity":"50","style":"icon","
         <main id="main" class="site-main">
             <div class="singular-content-wrap">
                 
-<article id="post-2" class="post-2 page type-page status-publish hentry">
+<article id="post-163" class="post-163 page type-page status-publish hentry">
 	<!-- Page/Post Single Image Disabled or No Image set in Post Thumbnail -->
 	<div class="entry-container">
 		
 		<header class="entry-header">
-			<h1 class="entry-title">VMware Cloud on AWS Experience Day</h1>			<div class="entry-meta">
-				<span class="byline screen-reader-text"> <span class="author-label screen-reader-text">By </span><span class="author vcard"><a class="url fn n" href="/202307/author/yambow/">yambow</a></span></span><span class="posted-on"><span class="date-label"> </span><a href="/202307/" rel="bookmark"><time class="entry-date published" datetime="2023-07-07T00:00:10+09:00">2023年7月7日</time><time class="updated" datetime="2023-07-11T02:04:04+09:00">2023年7月11日</time></a></span>			</div>
+			<h1 class="entry-title">ステップ４　vCenter 接続の許可</h1>			<div class="entry-meta">
+				<span class="byline screen-reader-text"> <span class="author-label screen-reader-text">By </span><span class="author vcard"><a class="url fn n" href="/202307/author/yambow/">yambow</a></span></span><span class="posted-on"><span class="date-label"> </span><a href="/202307/%e3%83%a9%e3%83%9c%ef%bc%91-sddc-%e3%81%ae%e7%92%b0%e5%a2%83%e6%a7%8b%e7%af%89/%e3%82%b9%e3%83%86%e3%83%83%e3%83%97%ef%bc%94%e3%80%80vcenter-%e6%8e%a5%e7%b6%9a%e3%81%ae%e8%a8%b1%e5%8f%af/" rel="bookmark"><time class="entry-date published" datetime="2023-07-07T00:00:48+09:00">2023年7月7日</time><time class="updated" datetime="2023-07-11T02:02:08+09:00">2023年7月11日</time></a></span>			</div>
 <!-- .entry-meta -->
 		</header><!-- .entry-header -->
 
 		
 		<div class="entry-content">
 			
-<p>既存データセンターの仮想化環境からの最短ルートでクラウド移行を実現するのが「VMware Cloud on AWS」です。クラウド移行だけでなく、オンプレミス環境の拡張や災害対策などでの活用が広がっています。&nbsp;</p>
+<p>SDDCを展開した直後の状態では、MGWのファイアウォールでvCenterへのアクセスがブロックされています。このステップでは、SDDCの管理者がvCenterに接続できるようにファイアウォールで許可ルールを追加します。</p>
 
 
 
-<p>本セミナーは、Software-Defined Data Center（SDDC） のネットワークの設定や仮想マシンの作成といった VMware Cloud on AWS に関する基本的な操作をご説明します。実際の運用管理を想定した一連の操作を体験いただけます。&nbsp;</p>
+<figure class="wp-block-image size-full"><img decoding="async" width="886" height="434" src="/202307/wp-content/uploads/2023/07/1-4-1.png" alt="" class="wp-image-345" srcset="/202307/wp-content/uploads/2023/07/1-4-1.png 886w, /202307/wp-content/uploads/2023/07/1-4-1-300x147.png 300w, /202307/wp-content/uploads/2023/07/1-4-1-768x376.png 768w" sizes="(max-width: 886px) 100vw, 886px"></figure>
 
 
 
-<p>詳細については <strong>Next</strong> をクリックして下さい。&nbsp;</p>
+<p></p>
+
+
+
+<p>ファイアウォールルールの定義には、あらかじめルールに適用するグループを作成する必要があります。このステップでは、自身のPCのアドレスを登録したグループを作成して、そのグループをルールに適用します。</p>
+
+
+
+<figure class="wp-block-image size-full"><img decoding="async" width="918" height="408" src="/202307/wp-content/uploads/2023/07/1-4-8.png" alt="" class="wp-image-352" srcset="/202307/wp-content/uploads/2023/07/1-4-8.png 918w, /202307/wp-content/uploads/2023/07/1-4-8-300x133.png 300w, /202307/wp-content/uploads/2023/07/1-4-8-768x341.png 768w" sizes="(max-width: 918px) 100vw, 918px"></figure>
+
+
+
+<figure class="wp-block-image size-full"><img decoding="async" width="953" height="457" src="/202307/wp-content/uploads/2023/07/1-4-9.png" alt="" class="wp-image-353" srcset="/202307/wp-content/uploads/2023/07/1-4-9.png 953w, /202307/wp-content/uploads/2023/07/1-4-9-300x144.png 300w, /202307/wp-content/uploads/2023/07/1-4-9-768x368.png 768w" sizes="(max-width: 953px) 100vw, 953px"></figure>
+
+
+
+<p></p>
+
+
+
+<ol type="1" start="1">
+<li>このステップで使用しているPCにおけるインターネットアクセスで使用しているIPアドレス（Global IP address）を特定し、そのアドレスをファイアウォールルールに登録します。ブラウザから<a rel="noreferrer noopener" href="https://ipv4.icanhazip.com/" target="_blank">https://ipv4.icanhazip.com/ </a> を開き、表示されている IP アドレスを記録してください。</li>
+
+
+
+<li>前のステップで利用した「NSX Manager」を開き、画面上部のメニューから②「インベントリ」をクリックし、画面右側のメニューから③「グループ」をクリックします。</li>
+
+
+
+<li>その後、画面右側から④「管理グループ」をクリックします。</li>
+</ol>
+
+
+
+<figure class="wp-block-image size-large"><img decoding="async" width="1024" height="571" src="/202307/wp-content/uploads/2023/07/1-4-2-2-1024x571.png" alt="" class="wp-image-354" srcset="/202307/wp-content/uploads/2023/07/1-4-2-2-1024x571.png 1024w, /202307/wp-content/uploads/2023/07/1-4-2-2-300x167.png 300w, /202307/wp-content/uploads/2023/07/1-4-2-2-768x428.png 768w, /202307/wp-content/uploads/2023/07/1-4-2-2-1536x857.png 1536w, /202307/wp-content/uploads/2023/07/1-4-2-2-2048x1142.png 2048w" sizes="(max-width: 1024px) 100vw, 1024px"></figure>
+
+
+
+<p></p>
+
+
+
+<ol type="1" start="4">
+<li>グループの一覧が表示されるので、その中から <strong>&#8220;External Management IP Addresses&#8221;</strong> グループのリストを特定します。そのリストの左側に表示されている⑤<strong>「３つの丸印」</strong>をクリックして⑥<strong>「編集」</strong>をクリックします。</li>
+</ol>
+
+
+
+<figure class="wp-block-image size-large"><img decoding="async" width="1024" height="571" src="/202307/wp-content/uploads/2023/07/1-4-10-1024x571.png" alt="" class="wp-image-357" srcset="/202307/wp-content/uploads/2023/07/1-4-10-1024x571.png 1024w, /202307/wp-content/uploads/2023/07/1-4-10-300x167.png 300w, /202307/wp-content/uploads/2023/07/1-4-10-768x428.png 768w, /202307/wp-content/uploads/2023/07/1-4-10-1536x857.png 1536w, /202307/wp-content/uploads/2023/07/1-4-10-2048x1142.png 2048w" sizes="(max-width: 1024px) 100vw, 1024px"></figure>
+
+
+
+<p></p>
+
+
+
+<ol type="1" start="5">
+<li>“<strong>External Management IP addresses</strong>” の右横にあるコンピュートメンバーフィールドの青いリンク（<strong>「x個のIP」</strong>と表示されているリンク）をクリックします。</li>
+</ol>
+
+
+
+<figure class="wp-block-image size-large"><img decoding="async" width="1024" height="571" src="/202307/wp-content/uploads/2023/07/1-4-5-1024x571.png" alt="" class="wp-image-358" srcset="/202307/wp-content/uploads/2023/07/1-4-5-1024x571.png 1024w, /202307/wp-content/uploads/2023/07/1-4-5-300x167.png 300w, /202307/wp-content/uploads/2023/07/1-4-5-768x428.png 768w, /202307/wp-content/uploads/2023/07/1-4-5-1536x857.png 1536w, /202307/wp-content/uploads/2023/07/1-4-5-2048x1142.png 2048w" sizes="(max-width: 1024px) 100vw, 1024px"></figure>
+
+
+
+<p></p>
+
+
+
+<ol type="1" start="6">
+<li>⑦<strong>「メンバーの設定」</strong>画面でIPアドレスを入力するフィールドが表示されるので、先ほど記録した IP アドレスを入力します。その後、画面右下の⑧<strong>「適用」</strong>をクリックします。</li>
+</ol>
+
+
+
+<figure class="wp-block-image size-large"><img decoding="async" width="1024" height="571" src="/202307/wp-content/uploads/2023/07/1-4-12-1024x571.png" alt="" class="wp-image-361" srcset="/202307/wp-content/uploads/2023/07/1-4-12-1024x571.png 1024w, /202307/wp-content/uploads/2023/07/1-4-12-300x167.png 300w, /202307/wp-content/uploads/2023/07/1-4-12-768x428.png 768w, /202307/wp-content/uploads/2023/07/1-4-12-1536x857.png 1536w, /202307/wp-content/uploads/2023/07/1-4-12-2048x1142.png 2048w" sizes="(max-width: 1024px) 100vw, 1024px"></figure>
+
+
+
+<p></p>
+
+
+
+<ol type="1" start="7">
+<li>元の画面に戻るので、<strong>「保存」</strong>をクリックします。これで、vCenter にアクセスする準備が整いました。</li>
+</ol>
+
+
+
+<figure class="wp-block-image size-large"><img decoding="async" width="1024" height="571" src="/202307/wp-content/uploads/2023/07/1-4-7-1024x571.png" alt="" class="wp-image-362" srcset="/202307/wp-content/uploads/2023/07/1-4-7-1024x571.png 1024w, /202307/wp-content/uploads/2023/07/1-4-7-300x167.png 300w, /202307/wp-content/uploads/2023/07/1-4-7-768x428.png 768w, /202307/wp-content/uploads/2023/07/1-4-7-1536x857.png 1536w, /202307/wp-content/uploads/2023/07/1-4-7-2048x1142.png 2048w" sizes="(max-width: 1024px) 100vw, 1024px"></figure>
+
+
+
+<p></p>
+
+
+
+<p>以上でこのステップは終了です。</p>
 
 
 
 <div class="wp-block-buttons is-layout-flex">
-<div class="wp-block-button is-style-fill"><a class="wp-block-button__link wp-element-button" href="/202307/%e3%83%a9%e3%83%9c%e3%83%bcsddc%e3%81%ae%e7%92%b0%e5%a2%83%e6%a7%8b%e7%af%89/1-sddc-%e3%81%ae%e3%83%87%e3%83%97%e3%83%ad%e3%82%a4/">Next</a></div>
+<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="/202307/%e3%83%a9%e3%83%9c%e3%83%bcvmware-cloud-on-aws-%e5%85%a5%e9%96%80/3-%e3%83%8d%e3%83%83%e3%83%88%e3%83%af%e3%83%bc%e3%82%af%e3%82%bb%e3%82%b0%e3%83%a1%e3%83%b3%e3%83%88%e3%81%ae%e4%bd%9c%e6%88%90/">Previous</a></div>
+
+
+
+<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="/202307/%e3%83%a9%e3%83%9c%e3%83%bcvmware-cloud-on-aws-%e5%85%a5%e9%96%80/5-%e3%83%86%e3%83%b3%e3%83%97%e3%83%ac%e3%83%bc%e3%83%88%e3%81%8b%e3%82%89-linux-vm-%e3%82%92%e4%bd%9c%e6%88%90%e3%81%99%e3%82%8b/">Next</a></div>
 </div>
 		</div>
 <!-- .entry-content -->
 
 				</div> <!-- .entry-container -->
-</article><!-- #post-2 -->
+</article><!-- #post-163 -->
                 </div> <!-- singular-content-wrap -->
         </main><!-- #main -->
     </div>
